@@ -35,6 +35,22 @@ public class Main {
         for (Eveniment result : punkteListe) {
             System.out.println(result.toString());
         }
+        //b) incepe cu litera data de la tastatura
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Gib eine Buchstabe: ");
+        String letter = scanner.nextLine();
+
+        for (Eveniment result : punkteListe) {
+            if (result.getName().startsWith(letter)) {
+                System.out.println(result.getName());
+
+            }
+        }
+
+
+
+
 
 
 
