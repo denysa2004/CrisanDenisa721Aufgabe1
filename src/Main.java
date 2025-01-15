@@ -2,6 +2,8 @@ import model.Eveniment;
 import model.Haus;
 import parser.XMLParser;
 
+import java.io.BufferedWriter;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
@@ -14,7 +16,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        String xmlFilePath="fisier.xml";
+        String xmlFilePath = "evenimente.xml";
         XMLParser xmlParser = XMLParser.getInstance();
 
         List<Eveniment> punkteListe = new ArrayList<>();
@@ -22,7 +24,7 @@ public class Main {
 
         try {
 
-            punkteListe=xmlParser.parseStudents(xmlFilePath);
+            punkteListe = xmlParser.parseStudents(xmlFilePath);
 
         } catch (IOException e) {
             System.out.println("A apărut o eroare la citirea fișierului  " + e.getMessage());
@@ -35,30 +37,6 @@ public class Main {
         }
 
 
-        //b) incepe cu litera data de la tastatura
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.print("Gib eine Buchstabe: ");
-        String letter = scanner.nextLine();
-
-        for (Eveniment result : punkteListe) {
-            if (result.getName().startsWith(letter)) {
-                System.out.println(result.getName());
-
-            }
-        }
-
-
-        //c)sortare
-
-        System.out.print("Die Gryffindor Studenten sind : ");
-        List<Eveniment> modifiableList = new ArrayList<>(punkteListe);
-        modifiableList.sort(Comparator.comparing(Eveniment::getDate));
-
-        for (Eveniment result : modifiableList) {
-                System.out.println(result.getDate()+" "+result.getName()+" "+result.getEreignis());
-            }
-        }
-
 
     }
+}

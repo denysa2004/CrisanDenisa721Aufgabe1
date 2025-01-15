@@ -14,11 +14,14 @@ import java.util.regex.Pattern;
 
 public class XMLParser {
 
-        private static final Pattern ID_PATTERN = Pattern.compile("\\p{javaSpaceChar}*<Id>(\\d+)</Id>");
-        private static final Pattern NAME_PATTERN = Pattern.compile("\\p{javaSpaceChar}*<Mitgliedsname>(.*)</Mitgliedsname>");
-        private static final Pattern HOUSE_PATTERN = Pattern.compile("\\p{javaSpaceChar}*<Haus>(.*)</Haus>");
-        private static final Pattern AUTHOR_PATTERN = Pattern.compile("\\p{javaSpaceChar}*<Ereignis>(.*)</Ereignis>");
+
+
+
         private static final Pattern POINTS_PATTERN = Pattern.compile("\\p{javaSpaceChar}*<Datum>(-?\\d+)</Datum>");
+        private static final Pattern AUTHOR_PATTERN = Pattern.compile("\\p{javaSpaceChar}*<Ereignis>(.*)</Ereignis>");
+        private static final Pattern HOUSE_PATTERN = Pattern.compile("\\p{javaSpaceChar}*<Haus>(.*)</Haus>");
+    private static final Pattern ID_PATTERN = Pattern.compile("\\p{javaSpaceChar}*<Id>(\\d+)</Id>");
+    private static final Pattern NAME_PATTERN = Pattern.compile("\\p{javaSpaceChar}*<Mitgliedsname>(.*)</Mitgliedsname>");
 
         private static parser.XMLParser instance;
 
@@ -44,7 +47,7 @@ public class XMLParser {
 
             try (BufferedReader reader = Files.newBufferedReader(filePath)) {
                 if (!reader.readLine().equals("<logs>")) {
-                    throw new IOException("Invalid student file");
+                    throw new IOException("Invalid file");
                 }
 
                 List<Eveniment> students = new ArrayList<>();
