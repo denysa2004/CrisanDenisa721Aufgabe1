@@ -49,10 +49,62 @@ public class Main {
         }
 
 
-
-
-
+//        //c)sortare
+//
+//        System.out.print("Die Sortierung : ");
+//        punkteListe.sort(Comparator.comparing(Eveniment::getDate));
+//
+//        for (Eveniment result : punkteListe) {
+//            if (result.getHaus() == Haus.STARK) {
+//                System.out.println(result.getDate() + " " + result.getName() + " " + result.getEreignis());
+//            }
+//        }
+//
+//
+//        //d)
+//
+//        int punktehaus1=0;
+//        int punktehaus2=0;
+//        int punktehaus3=0;
+//        int punktehaus4=0;
+//        List<String> ergebnisListe = new ArrayList<>();
+//        ergebnisListe.add("Gryffindor#" + punktehaus1);
+//        ergebnisListe.add("Hufflepuff#" + punktehaus2);
+//        ergebnisListe.add("Ravenclaw#" + punktehaus3);
+//        ergebnisListe.add("Slytherin#" + punktehaus4);
+//
+//        // Sortarea listei în ordine descrescătoare a punctelor
+//
+////        ergebnisListe.sort((a, b) -> {
+////            int puncteA = Integer.parseInt(a.split("#")[1]);
+////            int puncteB = Integer.parseInt(b.split("#")[1]);
+////            return Integer.compare(puncteB, puncteA); // Ordine descrescătoare
+////        });
+//
+//        //sortatre lista dupa nume
+//        ergebnisListe.sort((a, b) -> {
+//            String puncteA = a.split("#")[0];
+//            String puncteB = b.split("#")[0];
+//            return puncteB.compareTo(puncteA); // Ordine descrescătoare
+//        });
+//
+//
+//
+////scriu in fisier
+//        String fileName = "ergebnis.txt";
+//
+//        try (BufferedWriter writer = new BufferedWriter(new FileWriter(fileName))) {
+//            for (String ergebnis : ergebnisListe) {
+//                writer.write(ergebnis);
+//                writer.newLine();
+//            }
+//
+//        } catch (IOException e) {
+//            System.out.println("A apărut o eroare la salvarea datelor: " + e.getMessage());
+//        }
+//    }
 
 
     }
 }
+
