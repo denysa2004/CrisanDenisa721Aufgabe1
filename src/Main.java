@@ -4,6 +4,7 @@ import parser.XMLParser;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
@@ -29,6 +30,20 @@ public class Main {
 
         for (Eveniment result : punkteListe) {
             System.out.println(result.toString());
+        }
+
+
+        //b) incepe cu litera data de la tastatura
+
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Gib eine Buchstabe: ");
+        String letter = scanner.nextLine();
+
+        for (Eveniment result : punkteListe) {
+            if (result.getName().startsWith(letter)) {
+                System.out.println(result.getName());
+
+            }
         }
 
 
