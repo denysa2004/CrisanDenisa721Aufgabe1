@@ -1,8 +1,10 @@
 import model.Eveniment;
+import model.Haus;
 import parser.XMLParser;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Scanner;
 
@@ -47,5 +49,16 @@ public class Main {
         }
 
 
+        //c)sortare
+
+        System.out.print("Die Gryffindor Studenten sind : ");
+        List<Eveniment> modifiableList = new ArrayList<>(punkteListe);
+        modifiableList.sort(Comparator.comparing(Eveniment::getDate));
+
+        for (Eveniment result : modifiableList) {
+                System.out.println(result.getDate()+" "+result.getName()+" "+result.getEreignis());
+            }
+        }
+
+
     }
-}
